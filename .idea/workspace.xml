@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0726e668-5aa1-424d-bed2-2d326b1544d5" name="Changes" comment="Creación de base de datos y conexión con la misna">
-      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/ChatBot1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="0726e668-5aa1-424d-bed2-2d326b1544d5" name="Changes" comment="este es un mensaje">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +20,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$/Chatbot/ChatBot" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$/Chatbot/ChatBot" value="main" />
@@ -33,12 +41,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "PamelaCarriel"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;PamelaCarriel&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -51,7 +59,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -62,19 +70,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Python" />
@@ -117,7 +125,8 @@
       <updated>1709905071628</updated>
       <workItem from="1709905074270" duration="64000" />
       <workItem from="1709905365874" duration="196000" />
-      <workItem from="1710031707053" duration="5103000" />
+      <workItem from="1710031707053" duration="5349000" />
+      <workItem from="1710037726460" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="xaa">
       <option name="closed" value="true" />
@@ -151,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710037180100</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="este es un mensaje">
+      <option name="closed" value="true" />
+      <created>1710037601818</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710037601818</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +188,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="xaa" />
     <MESSAGE value="Creación de base de datos y conexión con la misna" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creación de base de datos y conexión con la misna" />
+    <MESSAGE value="este es un mensaje" />
+    <option name="LAST_COMMIT_MESSAGE" value="este es un mensaje" />
   </component>
 </project>
