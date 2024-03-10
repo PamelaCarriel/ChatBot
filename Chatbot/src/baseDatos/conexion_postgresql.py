@@ -13,7 +13,6 @@ def connect_db():
         )
         mensaje = "Conexión exitosa"
         cursor = conn.cursor()
-        cursor.execute("SELECT VERSION()")
     except Exception as ex:
         mensaje = ex
 
@@ -22,7 +21,7 @@ def connect_db():
 
 # Función para insertar un libro en la base de datos
 def insert_book(title, author, year):
-    conn, cursor = connect_db()
+    mensaje = connect_db()
     # cursor.execute("INSERT INTO books (title, author, year) VALUES (?, ?, ?)", (title, author, year))
     conn.commit()
     conn.close()
@@ -33,8 +32,8 @@ def busca_libros_por_autor(autor):
     mensaje = connect_db()
     if mensaje == "Conexión exitosa":
         cursor.execute(
-            "select titulo_libr, genero_literario_libr, editorial_libr from autor a inner join libros b on a.id_autor = b.id_autor where LOWER(a.nombre_autor) LIKE ?",
-            ('%' + autor + '%',))
+            """select a.nombre_autor,b.titulo_libr from autor a inner join libros b on 
+            a.id_autor = b.id_autor where LOWER(a.nombre_autor) LIKE ('%""" + autor + """%')""")
         books = cursor.fetchall()
         conn.close()
     else:
@@ -46,8 +45,8 @@ def busca_libros_por_titulo(titulo):
     mensaje = connect_db()
     if mensaje == "Conexión exitosa":
         cursor.execute(
-            "select titulo_libr, genero_literario_libr, editorial_libr from autor a inner join libros b on a.id_autor = b.id_autor where LOWER(a.nombre_autor) LIKE ?",
-            ('%' + titulo + '%',))
+            """select a.nombre_autor,b.titulo_libr from autor a inner join libros b on a.id_autor = b.id_autor where 
+            LOWER(b.titulo_libr) LIKE '%""" + titulo + """%'""")
         books = cursor.fetchall()
         conn.close()
     else:
