@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0726e668-5aa1-424d-bed2-2d326b1544d5" name="Changes" comment="este es un mensaje">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0726e668-5aa1-424d-bed2-2d326b1544d5" name="Changes" comment="modificacion repositorio inicial" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +33,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+        <entry key="$PROJECT_DIR$" value="master" />
         <entry key="$PROJECT_DIR$/Chatbot/ChatBot" value="main" />
       </map>
     </option>
@@ -74,7 +73,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "pCarriel",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -131,7 +130,7 @@
       <workItem from="1709905074270" duration="64000" />
       <workItem from="1709905365874" duration="196000" />
       <workItem from="1710031707053" duration="5349000" />
-      <workItem from="1710037726460" duration="935000" />
+      <workItem from="1710037726460" duration="1191000" />
     </task>
     <task id="LOCAL-00001" summary="xaa">
       <option name="closed" value="true" />
@@ -181,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710038037816</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="modificacion repositorio inicial">
+      <option name="closed" value="true" />
+      <created>1710040623508</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710040623508</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +209,7 @@
     <MESSAGE value="xaa" />
     <MESSAGE value="Creación de base de datos y conexión con la misna" />
     <MESSAGE value="este es un mensaje" />
-    <option name="LAST_COMMIT_MESSAGE" value="este es un mensaje" />
+    <MESSAGE value="modificacion repositorio inicial" />
+    <option name="LAST_COMMIT_MESSAGE" value="modificacion repositorio inicial" />
   </component>
 </project>
