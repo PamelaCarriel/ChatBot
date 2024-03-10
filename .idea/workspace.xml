@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0726e668-5aa1-424d-bed2-2d326b1544d5" name="Changes" comment="Creación de base de datos y conexión con la misna" />
+    <list default="true" id="0726e668-5aa1-424d-bed2-2d326b1544d5" name="Changes" comment="Creación de base de datos y conexión con la misna">
+      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/ChatBot1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chatbot/ChatBot/.idea/vcs.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +25,27 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/Chatbot/ChatBot" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "PamelaCarriel"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="3578c639-b1a0-4015-9b51-00d7b6c01535" />
+        <option name="url" value="https://github.com/PamelaCarriel/ChatBot.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -91,7 +117,7 @@
       <updated>1709905071628</updated>
       <workItem from="1709905074270" duration="64000" />
       <workItem from="1709905365874" duration="196000" />
-      <workItem from="1710031707053" duration="4613000" />
+      <workItem from="1710031707053" duration="5103000" />
     </task>
     <task id="LOCAL-00001" summary="xaa">
       <option name="closed" value="true" />
@@ -117,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710036824940</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Creación de base de datos y conexión con la misna">
+      <option name="closed" value="true" />
+      <created>1710037180100</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710037180100</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
