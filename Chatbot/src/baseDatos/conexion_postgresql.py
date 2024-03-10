@@ -1,4 +1,5 @@
 import psycopg2
+import datetime
 
 
 # Función para conectar a la base de datos
@@ -19,21 +20,56 @@ def connect_db():
     return mensaje
 
 
-# Función para insertar un libro en la base de datos
-def insert_book(title, author, year):
+# Función para insertar un pregunta y respuesta en la base de datos
+def insertar_preg_resp(pregunta, respuesta):
     mensaje = connect_db()
-    # cursor.execute("INSERT INTO books (title, author, year) VALUES (?, ?, ?)", (title, author, year))
+    cursor.execute("INSERT INTO preguntas_respuestas (pregunta, respuesta) VALUES (?, ?)", (pregunta, respuesta))
     conn.commit()
     conn.close()
 
 
+# Función para insertar reservas en la base de datos
+def insertar_reserva(id_lecto, id_libros):
+    mensaje = connect_db()
+    if mensaje == "Conexión exitosa":
+        cursor.execute("INSERT INTO reserva(id_lecto, id_libros, fecha_prestamo) VALUES (?, ?, ?);",
+                       (id_lecto, id_libros, datetime.date.today()))
+        conn.commit()
+        conn.close()
+
+
+# Función para buscar respuesta en la base de datos
+def buscar_respuesta(pregunta):
+    mensaje = connect_db()
+    if mensaje == "Conexión exitosa":
+        cursor.execute("SELECT respuesta FROM preguntas_respuestas WHERE pregunta = ?", (pregunta))
+        preg_resp = cursor.fetchall()
+        conn.close()
+    else:
+        preg_resp = None
+    return preg_resp
+
+
 # Función para buscar libros por título
-def busca_libros_por_autor(autor):
+def busca_lector(usuario):
     mensaje = connect_db()
     if mensaje == "Conexión exitosa":
         cursor.execute(
-            """select a.nombre_autor,b.titulo_libr from autor a inner join libros b on 
-            a.id_autor = b.id_autor where LOWER(a.nombre_autor) LIKE ('%""" + autor + """%')""")
+            """select id_lecto
+            from lector a 
+            where LOWER(a.nombre_lec) LIKE ('%""" + usuario.lower() + """%')""")
+        id_lecto = cursor.fetchall()[0]
+        conn.close()
+    else:
+        id_lecto = None
+    return id_lecto
+
+
+def buscar_libros(termino_busqueda):
+    mensaje = connect_db()
+    if mensaje == "Conexión exitosa":
+        cursor.execute("SELECT * FROM vw_libros_autores_localizacion WHERE LOWER(titulo) LIKE ? OR LOWER(autor) LIKE ?",
+                  ('%' + termino_busqueda.lower() + '%', '%' + termino_busqueda.lower() + '%'))
         books = cursor.fetchall()
         conn.close()
     else:
@@ -41,14 +77,12 @@ def busca_libros_por_autor(autor):
     return books
 
 
-def busca_libros_por_titulo(titulo):
+def valida_disponibilidad_libro(id_libros):
     mensaje = connect_db()
     if mensaje == "Conexión exitosa":
-        cursor.execute(
-            """select a.nombre_autor,b.titulo_libr from autor a inner join libros b on a.id_autor = b.id_autor where 
-            LOWER(b.titulo_libr) LIKE '%""" + titulo + """%'""")
-        books = cursor.fetchall()
+        cursor.execute("SELECT libro_disponible(?);", id_libros)
+        disponible = cursor.fetchone()[0]
         conn.close()
     else:
-        books = None
-    return books
+        disponible = False
+    return disponible
