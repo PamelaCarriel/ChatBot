@@ -22,11 +22,29 @@ def connect_db():
 
 # Función para insertar un pregunta y respuesta en la base de datos
 def insertar_preg_resp(pregunta, respuesta):
+    id_preg_resp = maximo_preg_resp()
     mensaje = connect_db()
-    cursor.execute("INSERT INTO preguntas_respuestas (pregunta, respuesta) VALUES (?, ?)", (pregunta, respuesta))
+    cursor.execute("INSERT INTO preguntas_respuestas (id, pregunta, respuesta) VALUES (%s, %s, %s)", (id_preg_resp, pregunta, respuesta))
     conn.commit()
     conn.close()
 
+def maximo_preg_resp():
+    mensaje = connect_db()
+    if mensaje == "Conexión exitosa":
+        cursor.execute("select max(id) from preguntas_respuestas")
+        # Obtener todos los resultados
+        resultados = cursor.fetchall()
+
+        # Verificar si no hay resultados
+        if not resultados:
+            id_preg_resp = 1
+        else:
+            id_preg_resp = resultados[0][0] + 1
+
+        conn.close()
+    else:
+        id_preg_resp = None
+    return id_preg_resp
 
 def maximo_lector():
     mensaje = connect_db()
@@ -37,7 +55,7 @@ def maximo_lector():
 
         # Verificar si no hay resultados
         if not resultados:
-            id_lecto = None
+            id_lecto = 1
         else:
             id_lecto = resultados[0][0] + 1
 
@@ -73,12 +91,19 @@ def insertar_reserva(id_lecto, id_libros):
 def buscar_respuesta(pregunta):
     mensaje = connect_db()
     if mensaje == "Conexión exitosa":
-        cursor.execute("SELECT respuesta FROM preguntas_respuestas WHERE pregunta = ?", (pregunta))
-        preg_resp = cursor.fetchall()
+        cursor.execute("""SELECT respuesta FROM preguntas_respuestas WHERE pregunta = '""" + pregunta + """'""")
+        resultados = cursor.fetchall()
+
+        # Verificar si no hay resultados
+        if not resultados:
+            respuesta = None
+        else:
+            respuesta = resultados[0]
+
         conn.close()
     else:
-        preg_resp = None
-    return preg_resp
+        respuesta = None
+    return respuesta
 
 
 # Función para buscar libros por título

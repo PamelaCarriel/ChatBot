@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0726e668-5aa1-424d-bed2-2d326b1544d5" name="Changes" comment="actualizar la programacion del chatbot">
+    <list default="true" id="0726e668-5aa1-424d-bed2-2d326b1544d5" name="Changes" comment="actualizar la programacion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chatbot/src/baseDatos/conexion_postgresql.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chatbot/src/baseDatos/conexion_postgresql.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chatbot/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chatbot/src/main.py" afterDir="false" />
@@ -141,7 +141,7 @@
       <workItem from="1709905365874" duration="196000" />
       <workItem from="1710031707053" duration="5349000" />
       <workItem from="1710037726460" duration="1191000" />
-      <workItem from="1710206694366" duration="5160000" />
+      <workItem from="1710206694366" duration="9562000" />
     </task>
     <task id="LOCAL-00001" summary="xaa">
       <option name="closed" value="true" />
@@ -215,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710113563893</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="actualizar la programacion">
+      <option name="closed" value="true" />
+      <created>1710211930086</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710211930086</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +247,8 @@
     <MESSAGE value="modificacion repositorio inicial" />
     <MESSAGE value="crear estructura de archivos y proyecto de conexion a la base de datos" />
     <MESSAGE value="actualizar la programacion del chatbot" />
-    <option name="LAST_COMMIT_MESSAGE" value="actualizar la programacion del chatbot" />
+    <MESSAGE value="actualizar la programacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizar la programacion" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Python$main.coverage" NAME="main Coverage Results" MODIFIED="1710162664304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
