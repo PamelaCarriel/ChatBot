@@ -132,7 +132,7 @@ def busca_lector(usuario):
 
 def buscar_libros(termino_busqueda):
     mensaje = connect_db()
-    if mensaje == "Conexión exitosa":
+    if mensaje == "Conexión exitosa.":
         cursor.execute(
             "SELECT * FROM vw_libros_autores_localizacion WHERE LOWER(titulo_libr) LIKE %s OR LOWER(nombre_autor) LIKE %s",
             ('%' + termino_busqueda.lower() + '%', '%' + termino_busqueda.lower() + '%'))
