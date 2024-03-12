@@ -28,11 +28,42 @@ def insertar_preg_resp(pregunta, respuesta):
     conn.close()
 
 
+def maximo_lector():
+    mensaje = connect_db()
+    if mensaje == "Conexión exitosa":
+        cursor.execute("select max(id_lecto) from lector")
+        # Obtener todos los resultados
+        resultados = cursor.fetchall()
+
+        # Verificar si no hay resultados
+        if not resultados:
+            id_lecto = None
+        else:
+            id_lecto = resultados[0][0] + 1
+
+        conn.close()
+    else:
+        id_lecto = None
+    return id_lecto
+
+
+def insertar_lector(usuario):
+    id_lector = maximo_lector()
+    mensaje = connect_db()
+    if mensaje == "Conexión exitosa":
+        cursor.execute("INSERT INTO lector(id_lecto, nombre_lec) VALUES (%s, %s)", (id_lector, usuario))
+        conn.commit()
+        conn.close()
+    else:
+        id_lector = None
+    return id_lector
+
+
 # Función para insertar reservas en la base de datos
 def insertar_reserva(id_lecto, id_libros):
     mensaje = connect_db()
     if mensaje == "Conexión exitosa":
-        cursor.execute("INSERT INTO reserva(id_lecto, id_libros, fecha_prestamo) VALUES (?, ?, ?);",
+        cursor.execute("INSERT INTO reserva(id_lecto, id_libros, fecha_prestamo) VALUES (%s, %s, %s)",
                        (id_lecto, id_libros, datetime.date.today()))
         conn.commit()
         conn.close()
@@ -58,7 +89,16 @@ def busca_lector(usuario):
             """select id_lecto
             from lector a 
             where LOWER(a.nombre_lec) LIKE ('%""" + usuario.lower() + """%')""")
-        id_lecto = cursor.fetchall()[0]
+
+        # Obtener todos los resultados
+        resultados = cursor.fetchall()
+
+        # Verificar si no hay resultados
+        if not resultados:
+            id_lecto = None
+        else:
+            id_lecto = resultados[0][0]
+
         conn.close()
     else:
         id_lecto = None
@@ -68,8 +108,9 @@ def busca_lector(usuario):
 def buscar_libros(termino_busqueda):
     mensaje = connect_db()
     if mensaje == "Conexión exitosa":
-        cursor.execute("SELECT * FROM vw_libros_autores_localizacion WHERE LOWER(titulo) LIKE ? OR LOWER(autor) LIKE ?",
-                  ('%' + termino_busqueda.lower() + '%', '%' + termino_busqueda.lower() + '%'))
+        cursor.execute(
+            "SELECT * FROM vw_libros_autores_localizacion WHERE LOWER(titulo_libr) LIKE %s OR LOWER(nombre_autor) LIKE %s",
+            ('%' + termino_busqueda.lower() + '%', '%' + termino_busqueda.lower() + '%'))
         books = cursor.fetchall()
         conn.close()
     else:
@@ -80,8 +121,13 @@ def buscar_libros(termino_busqueda):
 def valida_disponibilidad_libro(id_libros):
     mensaje = connect_db()
     if mensaje == "Conexión exitosa":
-        cursor.execute("SELECT libro_disponible(?);", id_libros)
-        disponible = cursor.fetchone()[0]
+        cursor.execute("SELECT COUNT(1) FROM reserva WHERE id_libros = " + id_libros + " AND estado_disponible = 'N'")
+        num_reg = cursor.fetchone()[0]
+        if num_reg == 0:
+            disponible = True
+        else:
+            disponible = False
+
         conn.close()
     else:
         disponible = False

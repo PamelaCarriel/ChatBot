@@ -14,11 +14,15 @@ nltk.download('stopwords')
 def reservar_libro(id_libros, usuario):
     disponible = S.valida_disponibilidad_libro(id_libros)
     id_lector = S.busca_lector(usuario)
+    if id_lector == None:
+        id_lector = S.insertar_lector(usuario)
+
     if disponible:
         S.insertar_reserva(id_lector, id_libros)
         return True
     else:
         return False
+
 
 # Función para procesar la entrada del usuario
 def procesar_entrada(entrada):
@@ -27,9 +31,11 @@ def procesar_entrada(entrada):
     tokens = [w for w in tokens if not w in stop_words]
     return tokens
 
+
 # Función para calcular la similitud entre dos cadenas
 def similar(a, b):
     return SequenceMatcher(None, a, b).ratio()
+
 
 # Función principal del chatbot
 def chatbot():
@@ -48,11 +54,12 @@ def chatbot():
                 if resultados:
                     print("He encontrado los siguientes libros:")
                     for libro in resultados:
-                        print(f"ID: {libro['id_libros']}, Título: {libro['titulo_libr']}, Autor: {libro['nombre_autor']}, Género: {libro['genero_literario_libr']}")
-                    opcion_reserva = input("¿Quieres reservar alguno de estos libros? (si/no): ").strip().lower()
+                        print(
+                            f"ID: {libro[0]}, Título: {libro[1]}, Autor: {libro[5]}, Género: {libro[2]}")
+                    opcion_reserva = input("\n¿Quieres reservar alguno de estos libros? (si/no): ").strip().lower()
                     if opcion_reserva == 'si':
-                        libro_id = input("Ingrese el ID del libro que desea reservar: ").strip()
-                        usuario = input("Ingrese su nombre para la reserva: ").strip()
+                        libro_id = input("\nIngrese el ID del libro que desea reservar: ").strip()
+                        usuario = input("\nIngrese su nombre para la reserva: ").strip()
                         if reservar_libro(libro_id, usuario):
                             print("¡Libro reservado con éxito!")
                         else:
@@ -61,7 +68,6 @@ def chatbot():
                     print("Lo siento, no se encontraron resultados para ese título.")
             else:
                 print("Lo siento, no entendí tu solicitud. ¿Puedes intentar de nuevo?")
-
 
 
 if __name__ == "__main__":
