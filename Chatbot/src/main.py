@@ -40,7 +40,7 @@ def similar(a, b):
 
 # Función principal del chatbot
 def chatbot():
-    print("\n¡Hola! Soy BiblioGenio. ¿En qué puedo ayudarte?")
+    print("\n¡Hola! Soy la Biblioteca Alejandro Segovia. ¿En qué puedo ayudarte?")
     while True:
         usuario_input = input("\n> ").strip()
         if usuario_input.lower() == 'salir':
