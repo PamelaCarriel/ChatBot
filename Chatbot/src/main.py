@@ -6,6 +6,7 @@ from baseDatos import conexion_postgresql as S
 import nltk
 
 # Descargar recursos de NLTK si no están disponibles
+#nltk.download()
 #nltk.download('punkt')
 #nltk.download('stopwords')
 

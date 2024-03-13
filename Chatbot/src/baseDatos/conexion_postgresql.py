@@ -24,19 +24,21 @@ def connect_db():
 def insertar_preg_resp(pregunta, respuesta):
     id_preg_resp = maximo_preg_resp()
     mensaje = connect_db()
-    cursor.execute("INSERT INTO preguntas_respuestas (id, pregunta, respuesta) VALUES (%s, %s, %s)", (id_preg_resp, pregunta, respuesta))
+    cursor.execute("INSERT INTO preguntas_respuestas (id_preg_resp, pregunta, respuesta) VALUES (%s, %s, %s)",
+                   (id_preg_resp, pregunta, respuesta))
     conn.commit()
     conn.close()
+
 
 def maximo_preg_resp():
     mensaje = connect_db()
     if mensaje == "Conexión exitosa":
-        cursor.execute("select max(id) from preguntas_respuestas")
+        cursor.execute("select max(id_preg_resp) from preguntas_respuestas")
         # Obtener todos los resultados
         resultados = cursor.fetchall()
 
         # Verificar si no hay resultados
-        if not resultados:
+        if resultados[0][0] == None:
             id_preg_resp = 1
         else:
             id_preg_resp = resultados[0][0] + 1
@@ -45,6 +47,7 @@ def maximo_preg_resp():
     else:
         id_preg_resp = None
     return id_preg_resp
+
 
 def maximo_lector():
     mensaje = connect_db()
@@ -134,14 +137,13 @@ def buscar_libros(termino_busqueda):
     mensaje = connect_db()
     if mensaje == "Conexión exitosa":
         cursor.execute(
-            "SELECT * FROM vw_libros_autores_localizacion WHERE LOWER(titulo_libr) LIKE %s OR LOWER(nombre_autor) LIKE %s",
+            "SELECT * FROM vw_libros_autores WHERE LOWER(titulo_libr) LIKE %s OR LOWER(nombre_autor) LIKE %s",
             ('%' + termino_busqueda.lower() + '%', '%' + termino_busqueda.lower() + '%'))
         books = cursor.fetchall()
         conn.close()
     else:
         books = None
     return books
-
 
 def valida_disponibilidad_libro(id_libros):
     mensaje = connect_db()
